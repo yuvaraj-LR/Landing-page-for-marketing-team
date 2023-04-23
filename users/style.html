@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Muli', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        
+        .form-control {
+            border-style: none;
+            background-color: black;
+            position: relative;
+            margin: 20px 0;
+            width: 300px;
+        }
+        
+        .form-control input {
+            border: 0;
+            border-bottom: 2px solid #333;
+            padding: 15px 0;
+            display: block;
+            font-size: 18px;
+            font-family: 'Muli', sans-serif;
+            width: 100%;
+            transition: 0.1s ease-in;
+        }
+        
+        .form-control input:focus,
+        .form-control input:valid {
+            border-bottom-color: darksalmon;
+            outline: none;
+        }
+        
+        .form-control input:focus+label span,
+        .form-control input:valid+label span {
+            color: darksalmon;
+            transform: translateY(-30px);
+        }
+        
+        .form-control label {
+            background-color: black;
+            position: absolute;
+            top: 15px;
+            left: 0;
+        }
+        
+        .form-control label span {
+            display: inline-block;
+            font-size: 18px;
+            min-width: 5px;
+            transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        @media screen and (max-width: 480px) {
+            .social-panel-container.visible {
+                transform: translateX(0px);
+            }
+            .floating-btn {
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Fun Waving Animation</h1>
+    <div class="form-control">
+        <input type="text" required />
+        <label>Email</label>
+    </div>
+
+    <div class="form-control">
+        <input type="text" required />
+        <label>Password</label>
+    </div>
+
+
+    <script>
+        const inputs = document.querySelectorAll('.form-control input');
+        const labels = document.querySelectorAll('.form-control label');
+
+        labels.forEach(label => {
+            label.innerHTML = label.innerText
+                .split('')
+                .map((letter, idx) => `<span style="
+                    transition-delay: ${idx * 50}ms
+                ">${letter}</span>`)
+                .join('');
+        });
+    </script>
+
+</body>
+
+</html>

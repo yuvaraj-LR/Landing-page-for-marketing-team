@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Eczar|Work+Sans');
+
+/* colors */
+
+$green: #29D885;
+$red: #E44B5E;
+
+/* fonts */
+
+$work: 'Work Sans';
+$ecz: 'Eczar';
+$hal: 'Halant';
+body {
+    background-color: #2A527F;
+}
+
+button {
+    margin: 0 auto;
+    display: block;
+    padding: 10px 30px;
+    background: #fff;
+    outline: none;
+    border: none;
+    font-family: $work;
+    font-weight: bolder;
+    transition: 0.2s;
+    &:active {
+        background-color: #ccc;
+    }
+}
+
+section {
+    min-height: 100px;
+    max-width: 400px;
+    background-color: #fff;
+    margin: 40px auto;
+    -webkit-box-shadow: 10px 10px 28px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 28px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 28px 1px rgba(0, 0, 0, 0.75);
+    position: relative;
+    .fa-times {
+        position: absolute;
+        right: 7px;
+        top: 7px;
+        font-size: 1.3em;
+        cursor: pointer;
+    }
+    .icon {
+        padding: 18px;
+        margin-right: 10px;
+        float: left;
+        i {
+            font-size: 4em;
+            color: #fff;
+        }
+    }
+    h1,
+    p {
+        font-family: $work
+    }
+    h1 {
+        font-size: 0.8em;
+        font-weight: bolder;
+        padding-top: 15px;
+        padding-bottom: 5px;
+    }
+    p {
+        font-size: 0.8em;
+        padding-top: 6px;
+    }
+}
+
+#success {
+    .icon {
+        background-color: $green;
+    }
+}
+
+#fail {
+    .icon {
+        background-color: $red;
+    }
+}
+
+@media (min-width: 576px) {
+    section {
+        h1 {
+            font-size: 1em;
+        }
+        p {
+            font-size: 0.9em;
+        }
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
